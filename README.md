@@ -38,6 +38,25 @@
 - 抓取数据的版权归原作者及平台所有，使用者需自行承担使用风险。
 - 如本项目内容侵犯了您的合法权益，请联系作者删除。
 
+## Chrome / Edge 扩展版（不依赖篡改猴）
+
+`extension/` 目录是同一功能的 Manifest V3 扩展，可独立运行，不需要安装 Tampermonkey。
+
+### 本地安装
+
+1. 打开 `chrome://extensions`（Edge 为 `edge://extensions`）
+2. 打开右上角「开发者模式」
+3. 点「加载已解压的扩展程序」，选择本仓库的 `extension/` 目录
+4. 打开 B 站用户空间视频页，右下角悬浮按钮照常使用
+
+### 打包分发
+
+- **zip**：`bilibili-space-exporter-v1.2.0.zip` 可直接分享，对方解压后按上面步骤加载
+- **crx**：`chrome.exe --pack-extension=<extension 目录>`（Edge 用 `msedge.exe`），会生成 `.crx` 和 `.pem`
+
+> 注意：Chrome / Edge 默认只允许从官方商店安装扩展，双击或拖拽本地 `.crx` 通常会被拒绝。
+> 自用请用「加载已解压的扩展程序」；`.crx` 更适合企业策略部署或归档。
+
 ## License
 
 [MIT](LICENSE)
